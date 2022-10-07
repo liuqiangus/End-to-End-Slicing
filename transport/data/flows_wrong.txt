@@ -1,0 +1,145 @@
+{
+  "table": {
+    "id": "0",
+    "flow": [
+      {
+        "id": "4",
+        "hard-timeout": "0",
+        "idle-timeout": "0",
+        "match": {
+          "ethernet-match": {
+            "ethernet-type": { "type": "2048" }
+          },
+          "in-port": "openflow:106225813884292:12",
+          "ipv4-destination": "100.0.0.101/32"
+        },
+        "cookie": "5",
+        "instructions": {
+          "instruction": [
+            {
+              "order": "0",
+              "meter": { "meter-id": "0" }
+            },
+            {
+              "order": "1",
+              "apply-actions": {
+                "action": {
+                  "order": "0",
+                  "output-action": {
+                    "max-length": "65535",
+                    "output-node-connector": "1"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "priority": "80",
+        "table_id": "0"
+      },
+      {
+        "id": "2",
+        "hard-timeout": "0",
+        "idle-timeout": "0",
+        "match": {
+          "ethernet-match": {
+            "ethernet-type": { "type": "2048" }
+          },
+          "in-port": "openflow:106225813884292:1",
+          "ipv4-source": "100.0.0.101/32"
+        },
+        "cookie": "3",
+        "instructions": {
+          "instruction": [
+            {
+              "order": "0",
+              "meter": { "meter-id": "0" }
+            },
+            {
+              "order": "1",
+              "apply-actions": {
+                "action": {
+                  "order": "0",
+                  "output-action": {
+                    "max-length": "65535",
+                    "output-node-connector": "12"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "priority": "80",
+        "table_id": "0"
+      },
+      {
+        "id": "3",
+        "hard-timeout": "0",
+        "idle-timeout": "0",
+        "match": {
+          "ethernet-match": {
+            "ethernet-type": { "type": "2054" }
+          },
+          "in-port": "openflow:106225813884292:12"
+        },
+        "cookie": "4",
+        "instructions": {
+          "instruction": [
+            {
+              "order": "0",
+              "meter": { "meter-id": "0" }
+            },
+            {
+              "order": "1",
+              "apply-actions": {
+                "action": {
+                  "order": "0",
+                  "output-action": {
+                    "max-length": "65535",
+                    "output-node-connector": "1"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "priority": "80",
+        "table_id": "0"
+      },
+      {
+        "id": "1",
+        "hard-timeout": "0",
+        "idle-timeout": "0",
+        "match": {
+          "ethernet-match": {
+            "ethernet-type": { "type": "2054" }
+          },
+          "in-port": "openflow:106225813884292:1"
+        },
+        "cookie": "2",
+        "instructions": {
+          "instruction": [
+            {
+              "order": "0",
+              "meter": { "meter-id": "0" }
+            },
+            {
+              "order": "1",
+              "apply-actions": {
+                "action": {
+                  "order": "0",
+                  "output-action": {
+                    "max-length": "65535",
+                    "output-node-connector": "12"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "priority": "80",
+        "table_id": "0"
+      }
+    ]
+  }
+}

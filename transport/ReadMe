@@ -1,0 +1,62 @@
+######################################################## install ODL first ###############################################
+##########################################################################################################################
+sudo apt-get -y install openjdk-8-jre
+
+sudo update-alternatives --config java
+
+echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre' >> ~/.bashrc
+
+source ~/.bashrc
+
+echo $JAVA_HOME
+
+wget https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/distribution-karaf/0.5.3-Boron-SR3/distribution-karaf-0.5.3-Boron-SR3.zip
+
+unzip distribution-karaf-0.5.3-Boron-SR3.zip
+
+cd distribution-karaf-0.5.3-Boron-SR3
+
+./bin/karaf
+
+### then inside ODL, install features ##
+
+feature:list -i
+
+
+feature:install odl-openflowplugin-flow-services-rest odl-openflowplugin-app-table-miss-enforcer odl-openflowplugin-nxm-extensions
+
+##########################################################################################################################
+##########################################################################################################################
+##########################################################################################################################
+
+
+
+
+
+
+
+####### Pre-requisities ######
+IP addr of host should be 155.0.0.1
+Connect with managemnet port
+
+####### get topology #########
+http://localhost:8181/restconf/operational/network-topology:network-topology/
+
+http://localhost:8181/restconf/operational/network-topology:network-topology/topology/flow:1
+
+####### get nodes ###########
+http://localhost:8181/restconf/operational/opendaylight-inventory:nodes/
+
+
+
+
+
+
+##########################################################################################################################
+##########################################################################################################################
+##########################################################################################################################
+##########################################################################################################################
+
+python3 TN_API.py
+
+######## listening on 127.0.0.1/5000 port 

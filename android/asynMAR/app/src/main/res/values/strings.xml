@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">asynMAR</string>
+    <string name="title_activity_socket_image_client">SocketImageClient</string>
+</resources>
